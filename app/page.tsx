@@ -1,15 +1,11 @@
-'use client';
+import type { Metadata } from 'next';
 
-import { useEffect } from 'react';
+export const metadata: Metadata = {
+  title: 'WikiType',
+  description:
+    'A minimalist typing game for learning about any topic on Wikipedia.',
+};
 
 export default function Home() {
-  useEffect(() => {
-    const getData = async () => {
-      const res = await fetch('http://localhost:8080');
-      const json = await res.json();
-      console.log(json);
-    };
-    getData();
-  });
   return <div></div>;
 }
