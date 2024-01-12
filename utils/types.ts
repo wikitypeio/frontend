@@ -33,11 +33,10 @@ type ElementRange = Link | Bold | Italic;
 type Passage = {
   plaintext: string;
   elementRanges: ElementRange[];
-  primaryImgSrc: string;
 };
 
 export type ArticleResponse = {
   images: Image[];
-  passage: { elementRanges: ElementRange[]; plaintext: string };
+  passage: Passage;
   primaryImgSrc: string;
 };
