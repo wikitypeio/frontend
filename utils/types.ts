@@ -32,10 +32,12 @@ type ElementRange = Link | Bold | Italic;
 
 type Passage = {
   plaintext: string;
-  trackingRanges: ElementRange[];
+  elementRanges: ElementRange[];
   primaryImgSrc: string;
 };
 
 export type ArticleResponse = {
   images: Image[];
+  passage: { elementRanges: ElementRange[]; plaintext: string };
+  primaryImgSrc: string;
 };
