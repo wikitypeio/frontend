@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Sidebar from '@/components/Sidebar';
 
 export const metadata: Metadata = {
   title: 'WikiType',
@@ -7,5 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <div></div>;
+  return (
+    <div>
+      <Sidebar />
+    </div>
+  );
 }
