@@ -30,7 +30,7 @@ type Italic = {
 
 type ElementRange = Link | Bold | Italic;
 
-type Passage = {
+export type Passage = {
   plaintext: string;
   elementRanges: ElementRange[];
 };
@@ -39,4 +39,11 @@ export type ArticleResponse = {
   images: Image[];
   passage: Passage;
   primaryImgSrc: string;
+};
+
+export type SearchResult = {
+  description: string;
+  id: number;
+  thumbnail: { url: string };
+  title: string;
 };
