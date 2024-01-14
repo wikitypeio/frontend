@@ -2,7 +2,7 @@ import setSearchParams from '@/utils/setSearchParams';
 
 import type { SearchResult } from '@/utils/types';
 
-const LIMIT = 10;
+const LIMIT = 8;
 
 const SEARCH_PATH = new URL(
   'https://en.wikipedia.org/w/rest.php/v1/search/title'
