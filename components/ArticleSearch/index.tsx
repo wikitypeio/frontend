@@ -27,7 +27,7 @@ const ArticleSearch = (props: Props) => {
   }, [debouncedQuery]);
 
   return (
-    <div className='w-80 h-screen relative bg-gray-50'>
+    <div className='w-80 h-screen bg-gray-50'>
       <input
         type='text'
         value={query}
@@ -36,13 +36,10 @@ const ArticleSearch = (props: Props) => {
         className='w-full border border-gray-300'
       />
       {debouncedQuery && (
-        <div className='w-80 py-2 border border-gray-300 absolute top-32 flex flex-col bg-white'>
+        <div className='w-[500px] py-2 border border-gray-300 flex flex-col bg-white'>
           {results.length || loading ? (
             results.map((result) => (
-              <button
-                key={result.title}
-                className='py-2 px-4 flex gap-4 hover:bg-gray-100'
-              >
+              <div key={result.title} className='py-2 px-4 flex gap-4'>
                 {/*eslint-disable-next-line @next/next/no-img-element*/}
                 <img
                   src={result.thumbnail?.url ?? '/wikipediaLogo.png'}
@@ -53,16 +50,24 @@ const ArticleSearch = (props: Props) => {
                   <h3 className='font-bold'>{result.title}</h3>
                   <p>{result.description}</p>
                 </div>
+                <div className='flex-grow'></div>
                 <button
-                  className='border border-gray-300 '
+                  className='w-16 shrink-0 border border-gray-300 hover:bg-gray-100'
                   onClick={() => {
-                    setQuery('');
-                    setDebouncedQueryInstantly('');
+                    handleGoTo(result.id);
                   }}
                 >
-                  Click me
+                  Go To
                 </button>
-              </button>
+                <button
+                  className='w-16 shrink-0 border border-gray-300 hover:bg-gray-100'
+                  onClick={() => {
+                    handleAddToQueue(result.id);
+                  }}
+                >
+                  Add to Queue
+                </button>
+              </div>
             ))
           ) : (
             <p>No results</p>
@@ -71,6 +76,21 @@ const ArticleSearch = (props: Props) => {
       )}
     </div>
   );
+
+  function clearSearch() {
+    setQuery('');
+    setDebouncedQueryInstantly('');
+  }
+
+  function handleAddToQueue(id: number) {
+    clearSearch();
+    console.log(id);
+  }
+
+  function handleGoTo(id: number) {
+    clearSearch();
+    console.log(id);
+  }
 };
 
 export default ArticleSearch;
