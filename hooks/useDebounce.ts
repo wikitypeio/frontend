@@ -13,7 +13,7 @@ const useDebounce = <T>(value: T, delay = 500) => {
     };
   }, [value, delay]);
 
-  return debouncedValue;
+  return { debouncedValue, setInstantly: setDebouncedValue };
 };
 
 export default useDebounce;
