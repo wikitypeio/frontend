@@ -27,7 +27,7 @@ const ArticleSearch = (props: Props) => {
   }, [debouncedQuery]);
 
   return (
-    <div className='w-80 absolute p-4'>
+    <div className='w-full'>
       <input
         type='text'
         value={query}
