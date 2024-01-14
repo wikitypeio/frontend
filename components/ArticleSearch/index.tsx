@@ -71,7 +71,7 @@ const ArticleSearch = (props: Props) => {
                 </div>
               ))
             ) : (
-              <p>No results</p>
+              <p className='py-2 px-4 text-gray-600'>No results</p>
             )}
           </div>
           <div
