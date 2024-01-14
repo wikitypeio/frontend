@@ -49,7 +49,7 @@ const ArticleSearch = (props: Props) => {
                   />
                   <div className='text-left'>
                     <h3 className='font-bold'>{result.title}</h3>
-                    <p>{result.description}</p>
+                    <p className='text-gray-600'>{result.description}</p>
                   </div>
                   <div className='flex-grow'></div>
                   <button
